@@ -1,1 +1,1 @@
-Spring Boot + Wicket + Jetty + Websockets 
+Spring Boot + Wicket + Jetty + WebSockets 
