@@ -8,10 +8,6 @@ import org.springframework.web.context.support.WebApplicationContextUtils;
 
 public class WicketApplication extends WebApplication {
 
-	public static WicketApplication getWicketApplication() {
-		return ((WicketApplication) get());
-	}
-
 	@Override
 	public Class<TestPage> getHomePage() {
 		return TestPage.class;
@@ -25,6 +21,10 @@ public class WicketApplication extends WebApplication {
 
 	public ApplicationContext getSpringContext() {
 		return WebApplicationContextUtils.getRequiredWebApplicationContext(getServletContext());
+	}
+
+	public static WicketApplication getWicketApplication() {
+		return ((WicketApplication) get());
 	}
 
 }

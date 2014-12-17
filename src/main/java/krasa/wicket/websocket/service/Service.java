@@ -1,7 +1,8 @@
-package krasa.wicket.websocket;
+package krasa.wicket.websocket.service;
 
 import java.util.Collection;
 import java.util.concurrent.*;
+import krasa.wicket.websocket.WebInitializer;
 import org.apache.wicket.Application;
 import org.apache.wicket.protocol.ws.WebSocketSettings;
 import org.apache.wicket.protocol.ws.api.IWebSocketConnection;

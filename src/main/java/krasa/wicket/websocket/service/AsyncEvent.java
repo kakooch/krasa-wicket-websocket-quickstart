@@ -1,4 +1,4 @@
-package krasa.wicket.websocket;
+package krasa.wicket.websocket.service;
 
 import org.apache.wicket.protocol.ws.api.message.IWebSocketPushMessage;
 

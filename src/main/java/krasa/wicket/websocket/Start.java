@@ -15,8 +15,7 @@ import org.springframework.web.socket.server.standard.ServerEndpointExporter;
 @Configuration
 @EnableAutoConfiguration
 @ComponentScan(basePackages = { "krasa" })
-public class Start extends SpringBootServletInitializer
-		implements WebSocketConfigurer {
+public class Start extends SpringBootServletInitializer implements WebSocketConfigurer {
 
 	public static void main(String[] args) {
 		ApplicationContext ctx = SpringApplication.run(Start.class, args);
@@ -41,7 +40,7 @@ public class Start extends SpringBootServletInitializer
 	}
 
 	@Bean
-	public MyWicketServerEndpointConfig myEndpointConfig() {
+	public MyWicketServerEndpointConfig myWicketServerEndpointConfig() {
 		return new MyWicketServerEndpointConfig();
 	}
 
