@@ -17,7 +17,8 @@ import org.springframework.stereotype.Component;
 public class Service implements ApplicationListener<ContextRefreshedEvent> {
 
 	protected final Logger log = LoggerFactory.getLogger(getClass());
-	ScheduledExecutorService scheduledExecutorService = new ScheduledThreadPoolExecutor(1);
+
+	private ScheduledThreadPoolExecutor scheduledExecutorService = new ScheduledThreadPoolExecutor(1);
 
 	public void sendEvent(IWebSocketPushMessage event) {
 		Application application = Application.get(WebInitializer.WICKET_WEBSOCKET);
@@ -32,6 +33,9 @@ public class Service implements ApplicationListener<ContextRefreshedEvent> {
 
 	@Override
 	public void onApplicationEvent(ContextRefreshedEvent event) {
+		if (scheduledExecutorService.getTaskCount() > 0) {
+			return;
+		}
 		scheduledExecutorService.scheduleAtFixedRate(new Runnable() {
 
 			@Override
