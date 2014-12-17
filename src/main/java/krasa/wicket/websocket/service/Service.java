@@ -43,7 +43,7 @@ public class Service implements ApplicationListener<ContextRefreshedEvent> {
 				try {
 					sendEvent(new AsyncEvent());
 				} catch (Throwable e) {
-					e.printStackTrace();
+					log.error(String.valueOf(e), e);
 				}
 			}
 		}, 1, 1, TimeUnit.SECONDS);
