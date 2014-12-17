@@ -23,7 +23,7 @@ public class Service implements ApplicationListener<ContextRefreshedEvent> {
 		WebSocketSettings webSocketSettings = WebSocketSettings.Holder.get(application);
 		IWebSocketConnectionRegistry connectionRegistry = webSocketSettings.getConnectionRegistry();
 		Collection<IWebSocketConnection> connections = connectionRegistry.getConnections(application);
-		log.info("sending event to {} connections", connections.size());
+		log.trace("sending event to {} connections", connections.size());
 		for (IWebSocketConnection connection : connections) {
 			connection.sendMessage(event);
 		}

@@ -14,7 +14,6 @@ public class WebInitializer implements ServletContextInitializer {
 	@Override
 	public void onStartup(ServletContext sc) throws ServletException {
 		FilterRegistration filter = sc.addFilter(WICKET_WEBSOCKET, JavaxWebSocketFilter.class);
-		//FilterRegistration filter = sc.addFilter(WICKET_WEBSOCKET, PatchedJetty9WebSocketFilter.class);
 
 		filter.setInitParameter("applicationClassName", WicketApplication.class.getCanonicalName());
 		filter.setInitParameter(WicketFilter.FILTER_MAPPING_PARAM, "/*");

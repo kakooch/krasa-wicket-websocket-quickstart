@@ -38,7 +38,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
+			<artifactId>spring-boot-starter-websocket</artifactId>
 			<exclusions>
 				<exclusion>
 					<groupId>org.springframework.boot</groupId>
@@ -58,10 +58,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.wicket</groupId>
@@ -91,11 +87,6 @@
 		</dependency>
 		<dependency>
 			<groupId>org.apache.wicket</groupId>
-			<artifactId>wicket-native-websocket-jetty9</artifactId>
-			<version>${wicket.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.wicket</groupId>
 			<artifactId>wicket-native-websocket-javax</artifactId>
 			<version>${wicket.version}</version>
 		</dependency>
@@ -110,7 +101,6 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-
 
 		<dependency>
 			<groupId>org.apache.wicket</groupId>
