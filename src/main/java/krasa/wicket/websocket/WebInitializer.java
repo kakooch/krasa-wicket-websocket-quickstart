@@ -19,7 +19,8 @@ public class WebInitializer implements ServletContextInitializer {
 		filter.setInitParameter(WicketFilter.FILTER_MAPPING_PARAM, "/*");
 		filter.addMappingForUrlPatterns(null, false, "/*");
 
-		sc.getSessionCookieConfig().setMaxAge(60);
+		sc.getSessionCookieConfig().setMaxAge(
+				60 * 60 * 10); // reloads page with ajax after it expires, i have no idea how it works.
 	}
 
 }
