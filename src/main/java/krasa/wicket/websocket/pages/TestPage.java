@@ -4,6 +4,7 @@ import java.util.Date;
 import krasa.wicket.websocket.service.AsyncEvent;
 import org.apache.wicket.datetime.PatternDateConverter;
 import org.apache.wicket.datetime.markup.html.basic.DateLabel;
+import org.apache.wicket.extensions.ajax.markup.html.form.upload.UploadProgressBar;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;
@@ -29,6 +30,14 @@ public class TestPage extends WebPage {
 				}
 			}
 		});
+		
+		
+		
+		PluginUploadForm progressUploadForm = new PluginUploadForm("progressUpload");
+		progressUploadForm.add(new UploadProgressBar("progress", progressUploadForm,
+				progressUploadForm.getFileUploadField()));
+		queue(progressUploadForm);
+		
 	}
 
 	private IModel<Date> currentTimeModel() {

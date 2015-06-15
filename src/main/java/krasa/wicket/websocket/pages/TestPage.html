@@ -8,5 +8,20 @@
     <a href="#" wicket:id="CombinedTestPage">CombinedTestPage</a><br/>
     The current time is: <span wicket:id="time"></span>
 </p>
+
+
+<form wicket:id="progressUpload">
+    <fieldset>
+        <legend>Upload</legend>
+        <p>
+            <label for="upload">File</label>
+            <input wicket:id="fileInput" type="file"/>
+        </p>
+        <input type="submit" value="Upload!"/>
+        <span wicket:id="progress">[[upload progressbar]]</span>
+    </fieldset>
+</form>
+
+
 </body>
 </html>
